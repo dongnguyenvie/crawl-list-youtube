@@ -6,5 +6,8 @@ services:
             context: .
             dockerfile: ./docker_compose/nodejs/Dockerfile
         command: /start.sh
+        environment:
+            - DEBUG=*
+            - NODE_ENV=development
         ports:
             - 3000:3000

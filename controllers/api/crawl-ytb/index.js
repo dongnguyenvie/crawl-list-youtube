@@ -16,12 +16,17 @@ module.exports = async (req, res) => {
 // https://www.youtube.com/watch?v=EN4ZS94bbPE&list=PL3E5qDhlF56c2UDINlJgLYNHY6TFkXlF0
 async function crawlRequest(url, listAutio = {}, callback) {
   console.log(url)
-  const result = await nightmare
+  let result 
+    try {
+      result = await nightmare
     .goto(url)
     .scrollTo(100, 0)
     .wait('#playlist-actions')
     .wait(500)
     .evaluate(() => document.querySelector('body').innerHTML)
+    } catch (error) {
+      console.log(111, error)
+    }
   let $ = cheerio.load(result)
 
   let strList = $(
@@ -54,6 +59,9 @@ async function crawlRequest(url, listAutio = {}, callback) {
           //   })
           callback(listAutio)
           console.log('disconnect')
+        })
+        .catch(err => {
+          console.log(err)
         })
       }
     }
