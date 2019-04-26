@@ -15,12 +15,12 @@ module.exports = async (req, res) => {
 }
 // https://www.youtube.com/watch?v=EN4ZS94bbPE&list=PL3E5qDhlF56c2UDINlJgLYNHY6TFkXlF0
 async function crawlRequest(url, listAutio = {}, callback) {
-  // console.log(111111, url)
+  console.log(url)
   const result = await nightmare
     .goto(url)
     .scrollTo(100, 0)
     .wait('#playlist-actions')
-    .wait(1000)
+    .wait(500)
     .evaluate(() => document.querySelector('body').innerHTML)
   let $ = cheerio.load(result)
 
