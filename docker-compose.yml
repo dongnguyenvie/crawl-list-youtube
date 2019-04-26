@@ -1,0 +1,10 @@
+version: '3.7'
+services:
+    dong_nodejs:
+        container_name: dong_nodejs_name
+        build:
+            context: .
+            dockerfile: ./docker_compose/nodejs/Dockerfile
+        command: /start.sh
+        ports:
+            - 3000:3000
