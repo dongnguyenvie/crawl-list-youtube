@@ -5,7 +5,7 @@
   "repository": "https://github.com/lmint3010/smoney-api.git",
   "author": "Lư Minh Thông <jeonkyosin@gmail.com>",
   "scripts": {
-    "start": "nodemon server.js",
+    "start": "node server.js",
     "dev": "nodemon server.js"
   },
   "license": "MIT",
