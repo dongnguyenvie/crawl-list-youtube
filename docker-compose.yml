@@ -1,13 +1,13 @@
 version: '3.7'
 services:
     dong_nodejs:
-        container_name: dong_nodejs_name
+        container_name: dong_nodejs_nightmare
         build:
             context: .
             dockerfile: ./docker_compose/nodejs/Dockerfile
         command: /start.sh
         environment:
-            - DEBUG=*
+            # - DEBUG=*
             - NODE_ENV=development
         ports:
             - 3000:3000
