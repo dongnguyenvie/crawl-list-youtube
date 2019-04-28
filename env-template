@@ -1,0 +1,7 @@
+# uri mongodb
+MONGO_URI_DEV = {url_mogodb}
+MONGO_URI_LIVE = ...
+# hour format 98 = 98h
+TIME_EXISTS_TOKEN = 98
+# secrect of jwt
+SECRET = {SECRET} 
